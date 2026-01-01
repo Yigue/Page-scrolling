@@ -27,15 +27,15 @@ export default function EnterSection() {
             opacity: 1,
             scale: 1,
             y: 0,
-            duration: 1.2,
+            duration: 1.8, // Más lento
             ease: 'power3.out',
             scrollTrigger: {
               trigger: title as HTMLElement,
-              start: 'top 60%',  // ← MUCHO MÁS TEMPRANO
+              start: 'top 70%',
               end: 'top 30%',
               toggleActions: 'play none none none',
             },
-            delay: index * 0.2,
+            delay: index * 0.3, // Delay más largo
           }
         )
       })

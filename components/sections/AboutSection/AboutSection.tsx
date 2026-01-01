@@ -12,7 +12,7 @@ export default function AboutSection() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Animación del intro
+      // Animación del intro (más lenta y suave)
       gsap.fromTo(
         `.${styles.aboutIntro}`,
         {
@@ -22,17 +22,17 @@ export default function AboutSection() {
         {
           opacity: 1,
           y: 0,
-          duration: 1,
+          duration: 1.5, // Más lento
           ease: 'power3.out',
           scrollTrigger: {
             trigger: `.${styles.aboutIntro}`,
-            start: 'top 60%',  // ← MUCHO MÁS TEMPRANO
+            start: 'top 70%',
             toggleActions: 'play none none none',
           },
         }
       )
 
-      // Animación del título palabra por palabra
+      // Animación del título palabra por palabra (más lenta y suave)
       gsap.fromTo(
         `.${styles.benefitsTitle} .${styles.word}`,
         {
@@ -42,18 +42,18 @@ export default function AboutSection() {
         {
           opacity: 1,
           y: 0,
-          duration: 0.8,
-          stagger: 0.1,
+          duration: 1.2, // Más lento
+          stagger: 0.15, // Más espaciado
           ease: 'power3.out',
           scrollTrigger: {
             trigger: `.${styles.benefitsTitle}`,
-            start: 'top 60%',  // ← MUCHO MÁS TEMPRANO
+            start: 'top 70%',
             toggleActions: 'play none none none',
           },
         }
       )
 
-      // Animación de los benefit items
+      // Animación de los benefit items (más lenta y suave)
       gsap.fromTo(
         `.${styles.benefitItem}`,
         {
@@ -65,12 +65,12 @@ export default function AboutSection() {
           opacity: 1,
           y: 0,
           scale: 1,
-          duration: 0.8,
-          stagger: 0.12,
+          duration: 1.2, // Más lento
+          stagger: 0.2, // Más espaciado
           ease: 'power3.out',
           scrollTrigger: {
             trigger: `.${styles.benefitsGrid}`,
-            start: 'top 55%',  // ← Items más temprano
+            start: 'top 75%',
             end: 'top 5%',
             toggleActions: 'play none none none',
           },

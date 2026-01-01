@@ -5,6 +5,7 @@ import {
   SmoothScroll,
   ScrollAnimations,
   ScrollEffects,
+  ScrollTriggerGSAP,
   SponsorBanner,
   BackgroundImages,
   Footer,
@@ -26,6 +27,7 @@ export default function Home() {
   return (
     <>
       <SmoothScroll>
+        <ScrollTriggerGSAP />
         <ScrollAnimations />
         <SponsorBanner />
         <BackgroundImages />

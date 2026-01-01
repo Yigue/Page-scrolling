@@ -16,12 +16,12 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
     // Configuration optimized for slower, smoother scroll like lenis.darkroom.engineering
     // Using manual RAF for better GSAP ScrollTrigger integration
     const lenis = new Lenis({
-      duration: 1.8, // Slower duration for more smooth feel (like lenis.darkroom.engineering)
+      duration: 2.8, // Slower duration for more smooth feel (like lenis.darkroom.engineering)
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Smooth easing
       orientation: 'vertical', // Vertical scroll
       gestureOrientation: 'vertical',
       smoothWheel: true, // Enable smooth wheel scrolling
-      wheelMultiplier: 0.7, // Reduced for slower, more controlled scroll
+      wheelMultiplier: 0.5, // Reduced for slower, more controlled scroll
       touchMultiplier: 1.2, // Touch scroll multiplier
       infinite: false, // No infinite scroll
       autoRaf: false, // Manual RAF for GSAP integration
@@ -43,11 +43,8 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
 
     rafId = requestAnimationFrame(raf)
 
-    // Integrate with GSAP ScrollTrigger if available
-    if (typeof window !== 'undefined' && (window as any).ScrollTrigger) {
-      const ScrollTrigger = (window as any).ScrollTrigger
-      lenis.on('scroll', ScrollTrigger.update)
-    }
+    // ScrollTrigger integration will be handled by ScrollTriggerGSAP component
+    // to avoid timing issues
 
     // Cleanup function
     return () => {

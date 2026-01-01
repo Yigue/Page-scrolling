@@ -12,7 +12,7 @@ export default function RethinkingSection() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Animación del subtítulo palabra por palabra
+      // Animación del subtítulo palabra por palabra (más lenta y suave)
       gsap.fromTo(
         `.${styles.sectionSubtitle} .${styles.word}`,
         {
@@ -22,18 +22,18 @@ export default function RethinkingSection() {
         {
           opacity: 1,
           y: 0,
-          duration: 0.8,
-          stagger: 0.12,
+          duration: 1.2, // Más lento
+          stagger: 0.15, // Más espaciado
           ease: 'power3.out',
           scrollTrigger: {
             trigger: `.${styles.sectionSubtitle}`,
-            start: 'top 80%',  // ← MUCHO MÁS TEMPRANO
+            start: 'top 70%',
             toggleActions: 'play none none none',
           },
         }
       )
 
-      // Animación del texto
+      // Animación del texto (más lenta y suave)
       gsap.fromTo(
         `.${styles.rethinkingText}`,
         {
@@ -43,17 +43,17 @@ export default function RethinkingSection() {
         {
           opacity: 1,
           y: 0,
-          duration: 1,
+          duration: 1.5, // Más lento
           ease: 'power3.out',
           scrollTrigger: {
             trigger: `.${styles.rethinkingText}`,
-            start: 'top 80%',  // ← MUCHO MÁS TEMPRANO
+            start: 'top 70%',
             toggleActions: 'play none none none',
           },
         }
       )
 
-      // Animación de los items con stagger
+      // Animación de los items con stagger (más lenta y suave)
       gsap.fromTo(
         `.${styles.problemItem}`,
         {
@@ -65,12 +65,12 @@ export default function RethinkingSection() {
           opacity: 1,
           y: 0,
           scale: 1,
-          duration: 0.8,
-          stagger: 0.15,
+          duration: 1.2, // Más lento
+          stagger: 0.2, // Más espaciado
           ease: 'power3.out',
           scrollTrigger: {
             trigger: `.${styles.problemsGrid}`,
-            start: 'top 80%',  // ← Items más temprano
+            start: 'top 75%',
             end: 'top 30%',
             toggleActions: 'play none none none',
           },
